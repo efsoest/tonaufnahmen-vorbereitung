@@ -11,9 +11,9 @@ Write-Host "--- Tonaufnahmen-Vorbereitung ---" -ForegroundColor Cyan
 
 # 1. VORLAGE AUSWÄHLEN
 Write-Host "Welche Vorlage soll verwendet werden?"
-Write-Host "1: Standard-Veranstaltung (Default)"
+Write-Host "1: Standard-Veranstaltung"
 Write-Host "2: Virtual Soundcheck"
-$TypeChoice = Read-Host "Auswahl [1 oder 2]"
+$TypeChoice = Read-Host "Auswahl (Enter für Standard: 1)"
 
 $IsVSC = ($TypeChoice -eq "2")
 $TemplatePath = if ($IsVSC) { $TemplateVSC } else { $TemplateStandard }
@@ -37,7 +37,7 @@ do {
 
 # 3. VERANSTALTUNG ABFRAGEN
 $DefaultEvent = "Gottesdienst"
-$EventName = Read-Host "Name der Veranstaltung (Default: $DefaultEvent)"
+$EventName = Read-Host "Name der Veranstaltung (Enter für Standard: $DefaultEvent)"
 if ([string]::IsNullOrWhiteSpace($EventName)) { $EventName = $DefaultEvent }
 
 # 4. ORDNERNAME ZUSAMMENBAUEN (mit Suffix-Logik)
