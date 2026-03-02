@@ -17,17 +17,21 @@ Der Assistent führt schrittweise durch den Prozess:
 1. **Skript starten:** Skript über die Verknüpfung ausführen.
 2. **Vorlage wählen:**
    ```text
-   Bitte Vorlage wählen:
-   [1] Standard Gottesdienst
-   [2] Virtual Soundcheck
+   Welche Vorlage soll verwendet werden?
+   1: Standard-Veranstaltung
+   2: Virtual Soundcheck
+   Auswahl (Enter für Standard: 1): 
    ```
 3. **Datum eingeben:**
    ```text
-   Bitte Datum für die Aufnahme eingeben (TT.MM.JJJJ):
-   14.05.2023
+   Datum [TT.MM.JJJJ] (Enter für heute: 23.02.2026): 
    ```
-4. **Abschluss:**
-   Das Skript erstellt den Zielordner (z.B. `2023_05_14 (Standard Gottesdienst)`) inkl. der umbenannten Projektdaten.
+4. **Name der Veranstaltung eingeben:**
+   ```text
+   Name der Veranstaltung (Enter für Standard: Gottesdienst): 
+   ```
+5. **Abschluss:**
+   Das Skript erstellt den Zielordner (z.B. `2026_02_23 (Gottesdienst)`) inkl. der umbenannten Projektdaten.
    Durch Drücken einer beliebigen Taste wird die vorbereitete Cubase-Session direkt geöffnet.
 
 ---
@@ -37,7 +41,8 @@ Der Assistent führt schrittweise durch den Prozess:
 Zur initialen Einrichtung müssen die Pfade im Skript an die lokale Umgebung angepasst werden.
 
 1. **Konfiguration anpassen:** 
-   Öffne `tonaufnahmen-vorbereitung.ps1` in einem Texteditor und passe die definierten Umgebungsvariablen für **Quellpfade** (Wo liegen die Templates?) und **Zielpfade** (Wo sollen Aufnahmen gespeichert werden?) an.
+   Öffne `tonaufnahmen-vorbereitung.ps1` in einem Texteditor und passe die definierten Umgebungsvariablen für **Quellpfade** (Wo liegen die Templates?) und **Zielpfade** (Wo sollen Aufnahmen gespeichert werden?) an.  
+   *Hinweis: Das Skript prüft beim Starten automatisch, ob die konfigurierten Pfade gültig bzw. erreichbar sind, und stoppt bei Abweichungen (z.B. wegen eines nicht verbundenen Netzlaufwerks) mit einer eindeutigen Fehlermeldung.*
 2. **Ausführungsrichtlinien anpassen (Windows):** 
    Damit das Skript lokal ausgeführt werden darf, muss in einer administrativen PowerShell folgender Befehl ausgeführt werden:
    ```powershell
