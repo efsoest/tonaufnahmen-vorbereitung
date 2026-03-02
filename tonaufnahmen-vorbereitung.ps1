@@ -7,7 +7,7 @@ $TemplateVSC      = "C:\Pfad\Zu\VirtualSoundcheck_Vorlage"
 $DestinationBase  = "C:\Pfad\Zu\Aufnahmen"
 
 Clear-Host
-Write-Host "--- Kirchen-Recording-Assistent ---" -ForegroundColor Cyan
+Write-Host "--- Tonaufnahmen-Vorbereitung ---" -ForegroundColor Cyan
 
 # 1. VORLAGE AUSWÄHLEN
 Write-Host "Welche Vorlage soll verwendet werden?"
