@@ -7,6 +7,28 @@ $TemplateVSC      = "C:\Pfad\Zu\VirtualSoundcheck_Vorlage"
 $DestinationBase  = "C:\Pfad\Zu\Aufnahmen"
 
 Clear-Host
+
+# 0. KONFIGURATIONSPRÜFUNG
+$hasConfigError = $false
+if (-not (Test-Path $TemplateStandard -PathType Container)) {
+    Write-Host "KONFIGURATIONSFEHLER: Der Ordner für TemplateStandard ($TemplateStandard) existiert nicht!" -ForegroundColor Red
+    $hasConfigError = $true
+}
+if (-not (Test-Path $TemplateVSC -PathType Container)) {
+    Write-Host "KONFIGURATIONSFEHLER: Der Ordner für TemplateVSC ($TemplateVSC) existiert nicht!" -ForegroundColor Red
+    $hasConfigError = $true
+}
+if (-not (Test-Path $DestinationBase -PathType Container)) {
+    Write-Host "KONFIGURATIONSFEHLER: Der Zielordner DestinationBase ($DestinationBase) existiert nicht!" -ForegroundColor Red
+    $hasConfigError = $true
+}
+
+if ($hasConfigError) {
+    Write-Host "`nBitte passe die Pfade im Skript unter '# --- KONFIGURATION ---' an." -ForegroundColor Yellow
+    pause
+    exit
+}
+
 Write-Host "--- Tonaufnahmen-Vorbereitung ---" -ForegroundColor Cyan
 
 # 1. VORLAGE AUSWÄHLEN
