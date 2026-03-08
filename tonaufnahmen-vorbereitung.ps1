@@ -1,10 +1,10 @@
-# --- KONFIGURATION ---
+﻿# --- KONFIGURATION ---
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 [console]::InputEncoding = [System.Text.Encoding]::UTF8
 
-$TemplateStandard = "C:\Pfad\Zu\Standard_Vorlage"
-$TemplateVSC      = "C:\Pfad\Zu\VirtualSoundcheck_Vorlage"
-$DestinationBase  = "C:\Pfad\Zu\Aufnahmen"
+$TemplateStandard = "T:\Veranstaltungen\JJJJ_MM_TT (Veranstaltung)"
+$TemplateVSC      = "T:\Veranstaltungen\JJJJ_MM_TT (Veranstaltung) - NUR VIRTUAL SOUNDCHECK"
+$DestinationBase  = "D:\Veranstaltungen"
 
 Clear-Host
 
